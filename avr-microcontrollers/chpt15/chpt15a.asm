@@ -1,0 +1,13 @@
+.include "m32def.inc"
+
+LDI R16,0xFF
+OUT DDRB,R16
+LDI R16,0x00
+OUT DDRA,R16
+LDI R16,0xFF
+OUT PORTA,R16
+
+loop: 
+	IN R16,PINA
+	OUT PORTB,R16
+	RJMP loop
